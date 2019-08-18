@@ -12,9 +12,12 @@ class CashRegister
   
   def add_item(title, price, quantity = nil)
      @array << title
-    
-    quantity == nil ?  @total += price : @total += price * quantity 
-     
+    if quantity == nil 
+      @total += price 
+    else
+      @total += price * quantity 
+    end
+   
      
   end 
   
