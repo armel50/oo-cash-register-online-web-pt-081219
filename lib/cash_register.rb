@@ -1,5 +1,5 @@
 class CashRegister
-  attr_accessor :total, :discount, :array 
+  attr_accessor :total, :discount, :array, :last_item_price
  
    
   
@@ -15,6 +15,7 @@ class CashRegister
     if quantity == nil 
         @array << title
       @total += price 
+      @last_item_price = price
     else
       quantity.times{ @array << title}
       @total += price * quantity 
