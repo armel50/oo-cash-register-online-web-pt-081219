@@ -9,8 +9,9 @@ class CashRegister
   end 
   
   def add_item(title, price, quantity = nil)
+     @array << title
     quantity == nil ?  @total += price : @total += price * quantity 
-      @array << title
+     
      
   end 
   
