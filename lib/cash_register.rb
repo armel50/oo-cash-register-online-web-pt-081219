@@ -6,7 +6,8 @@ class CashRegister
   def initialize(employe_discount = nil)
     @total = 0 
     @discount = employe_discount
-     @array = []
+     @array = [] 
+     @last_item_price = []
    
   end 
   
@@ -14,8 +15,9 @@ class CashRegister
    
     if quantity == nil 
         @array << title
+        @last_item_price << price
       @total += price 
-      @last_item_price = price
+     
     else
       quantity.times{ @array << title}
       @total += price * quantity 
@@ -40,7 +42,7 @@ class CashRegister
   end 
   
   def void_last_transaction  
-    @total -= @last_item_price 
+    @total -= @last_item_price[-1] 
   end
   
 end
